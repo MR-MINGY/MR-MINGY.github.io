@@ -337,7 +337,6 @@ a, .m-nav a:hover, .l-post .p-desc a:hover, .ttl a:hover, .m-nav .dot, .l-pager 
   padding-bottom: 0; }
 
 .l-post .p-desc, article.p-art {
-  position: relative;
   top: 0;
   left: -80px;
   width: 100%;
