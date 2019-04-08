@@ -8,9 +8,15 @@
       <link href="/2019/04/08/oh-my-zsh/"/>
       <url>/2019/04/08/oh-my-zsh/</url>
       
-        <content type="html"><![CDATA[<h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h3><blockquote><p><strong>install</strong></p><pre><code>apt install -y gitapt install -y zshsh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre></blockquote><hr><blockquote><p><strong>my theme</strong></p><ul><li>1<pre><code>cd .oh-my-zsh/custom/themes/vim robbyrussell-ascii.zsh-theme</code></pre></li></ul></blockquote><ul><li>2<br><code>`</code><br>local ret_status=”%(?:%{$fg[green]%}&gt;:%{$fg[red]%}&gt;%s)”<br>PROMPT=’${ret_status} %{$fg[cyan]%}%~ %{$reset_color%} $(git_prompt_info) # ‘</li></ul><p>ZSH_THEME_GIT_PROMPT_PREFIX=”%{$fg[blue]%}git:(%{$fg[red]%}”<br>ZSH_THEME_GIT_PROMPT_SUFFIX=”%{$reset_color%} “<br>ZSH_THEME_GIT_PROMPT_DIRTY=”%{$fg[blue]%}) %{$fg[yellow]%}x%{$reset_color%}”<br>ZSH_THEME_GIT_PROMPT_CLEAN=”%{$fg[blue]%})”</p><pre><code>- 3</code></pre><p>vim .zshrc<br>ZSH_THEME=”robbyrussell-ascii”<br><code>`</code></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="install-oh-my-zsh-in-linux"><a href="#install-oh-my-zsh-in-linux" class="headerlink" title="install oh-my-zsh in linux"></a>install oh-my-zsh in linux</h3><blockquote><p><strong>install</strong></p></blockquote><pre><code class="shell">apt install -y gitapt install -y zshsh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre><hr><blockquote><p><strong>my theme</strong></p></blockquote><ul><li>1</li></ul><pre><code class="shell">cd .oh-my-zsh/custom/themes/vim robbyrussell-ascii.zsh-theme</code></pre><ul><li>2</li></ul><pre><code class="shell">local ret_status=&quot;%(?:%{$fg[green]%}&gt;:%{$fg[red]%}&gt;%s)&quot;PROMPT=&#39;${ret_status} %{$fg[cyan]%}%~ %{$reset_color%} $(git_prompt_info) # &#39;ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[blue]%}git:(%{$fg[red]%}&quot;ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%}) %{$fg[yellow]%}x%{$reset_color%}&quot;ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;</code></pre><ul><li>3</li></ul><pre><code class="shell">vim .zshrcZSH_THEME=&quot;robbyrussell-ascii&quot;</code></pre>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> tools </tag>
+            
+        </tags>
       
     </entry>
     
