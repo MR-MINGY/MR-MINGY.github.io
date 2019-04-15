@@ -1,0 +1,18 @@
+(Empire: stager/windows/launcher_vbs) > help
+
+agents		跳转到代理菜单。
+back 		返回返回菜单。
+creds 		从数据库返回凭据。
+execute 	执行生成器执行给定的帝国支架。
+exit 		退出帝国。
+generate 	执行给定的帝国支架。
+help 		显示帮助菜单。
+info 		显示统计器选项。
+interact 	与特定代理交互。
+list 		列出所有活动代理 (或侦听器)。
+listeners 	侦听器跳转到侦听器菜单。
+main 		返回主菜单。
+options 	选项显示统计器选项。
+resource 	从文件中读取并执行帝国命令的列表。
+set 		设置一个稳定器选项。
+unset 		取消设置的统计器选项。

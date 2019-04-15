@@ -1,0 +1,23 @@
+(Empire) > help
+help            主菜单帮助
+
+agents          跳转到 "代理" 菜单。
+creds           显示数据库中的凭据。
+exit            退出帝国
+help            显示帮助菜单。
+interact        与特定代理交互。
+list            列出活动代理或侦听器。
+listeners       侦听器与活跃的侦听器交互。
+load            从非标准文件夹加载empire模块。
+plugin          加载一个插件文件来扩展empire。
+plugins         所有可用和活动的插件。
+preobfuscate    预融合 PowerShell 模块源文件
+reload          重新加载一个 (或全部) empire模块。
+report          生成CSV和日志文件报告: session.csv, credentis.csv, master.log
+reset           重置全局选项 (例如 IP 白名单)。
+resource        从文件中读取并执行empire命令的列表。
+searchmodule    模块搜索empire模块名称描述。
+set             设置全局选项 (例如 IP 白名单)。
+show            显示全局选项 (例如 IP 白名单)。
+usemodule       使用empire模块。
+usestager       使用者使用empire的毒刺。

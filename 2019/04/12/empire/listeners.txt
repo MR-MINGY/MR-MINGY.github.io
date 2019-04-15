@@ -1,0 +1,48 @@
+(Empire: listeners) > help
+
+Listener Commands
+=================
+agents            Jump to the agents menu.
+back              Go back to the main menu.
+creds             Display/return credentials from the database.
+delete            Delete listener(s) from the database
+disable           Disables (stops) one or all listeners. The listener(s) will not start automatically with Empire
+edit              Change a listener option, will not take effect until the listener is restarted
+enable            Enables and starts one or all listners.
+exit              Exit Empire.
+help              Displays the help menu.
+info              Display information for the given active listener.
+kill              Kill one or all active listeners.
+launcher          Generate an initial launcher for a listener.
+list              List all active listeners (or agents).
+listeners         Jump to the listeners menu.
+main              Go back to the main menu.
+resource          Read and execute a list of Empire commands from a file.
+uselistener       Use an Empire listener module.
+usestager         Use an Empire stager.
+
+
+(Empire) > listeners
+(Empire: listeners) > help
+
+Listener Commands
+=================
+
+agents          跳转到代理菜单。
+back            返回到主菜单。
+creds           从数据库返回凭据。
+delete          从数据库中删除删除侦听器
+disable         禁用 (停止) 一个或所有侦听器。听者不会自动从帝国开始
+edit            编辑更改侦听器选项, 在重新启动侦听器之前不会生效
+enable          启用并启动一个或所有列表。
+exit            退出empire。
+help            显示帮助菜单。
+info            显示给定活动侦听器的信息。
+kill            杀死一个或所有活跃的侦听器。
+launcher        为侦听器生成初始启动器。
+list            列出所有活动侦听器 (或代理)。
+listeners       跳转到侦听器菜单。
+main            返回主菜单。
+resource        从文件中读取并执行帝国命令的列表。
+uselistener     使用empire听众模块。
+usestager       使用empire的stager木马。

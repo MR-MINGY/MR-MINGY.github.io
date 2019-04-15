@@ -1,0 +1,82 @@
+(Empire: win71pre) > help
+
+Agent Commands
+==============
+agents            Jump to the agents menu.
+back              Go back a menu.
+bypassuac         Runs BypassUAC, spawning a new high-integrity agent for a listener. Ex. spawn <listener>
+clear             Clear out agent tasking.
+creds             Display/return credentials from the database.
+download          Task an agent to download a file.
+exit              Task agent to exit.
+help              Displays the help menu or syntax for particular commands.
+info              Display information about this agent
+injectshellcode   Inject listener shellcode into a remote process. Ex. injectshellcode <meter_listener> <pid>
+jobs              Return jobs or kill a running job.
+kill              Task an agent to kill a particular process name or ID.
+killdate          Get or set an agent's killdate (01/01/2016).
+list              Lists all active agents (or listeners).
+listeners         Jump to the listeners menu.
+lostlimit         Task an agent to change the limit on lost agent detection
+main              Go back to the main menu.
+mimikatz          Runs Invoke-Mimikatz on the client.
+psinject          Inject a launcher into a remote process. Ex. psinject <listener> <pid/process_name>
+pth               Executes PTH for a CredID through Mimikatz.
+rename            Rename the agent.
+resource          Read and execute a list of Empire commands from a file.
+revtoself         Uses credentials/tokens to revert token privileges.
+sc                Takes a screenshot, default is PNG. Giving a ratio means using JPEG. Ex. sc [1-100]
+scriptcmd         Execute a function in the currently imported PowerShell script.
+scriptimport      Imports a PowerShell script and keeps it in memory in the agent.
+searchmodule      Search Empire module names/descriptions.
+shell             Task an agent to use a shell command.
+shinject          Inject non-meterpreter listener shellcode into a remote process. Ex. shinject <listener> <pid>
+sleep             Task an agent to 'sleep interval [jitter]'
+spawn             Spawns a new Empire agent for the given listener name. Ex. spawn <listener>
+steal_token       Uses credentials/tokens to impersonate a token for a given process ID.
+sysinfo           Task an agent to get system information.
+updatecomms       Dynamically update the agent comms to another listener
+updateprofile     Update an agent connection profile.
+upload            Task an agent to upload a file.
+usemodule         Use an Empire PowerShell module.
+workinghours      Get or set an agent's working hours (9:00-17:00).
+
+
+agents 			跳转到代理菜单。
+back 			返回菜单。
+bypassuac 		运行bypassuac, 绕过uac，为侦听器生成一个新的高完整性代理。例如: 生成<listener>
+clear 			清除代理任务。
+creds 			从数据库返回凭据。
+download 		任务代理下载文件。
+exit 			退出任务代理退出。
+help 			显示特定命令的帮助菜单或语法。
+info 			显示有关此代理的信息
+injectshellcode 将侦听器shellcode注入远程进程。例如: 注射代码<meter_listener> <pid>
+jobs 			返回作业或终止正在运行的作业。
+kill 			终止任务代理以终止特定的进程名称或 ID。
+killdate		获取或设置代理的杀人日期 (01.5。
+list 			列出所有活动代理 (或侦听器)。
+listeners 		跳转到侦听器菜单。
+lostlimit		代理更改丢失的代理检测的限制
+main			返回主菜单。
+mimikatz 		在客户端上运行调用调用。
+psinject 		将启动器注入远程进程。例如, 项目<listener> <pid rocess_name="">
+pth 			通过Mimikatz执行CredID的PTH。
+rename 			重命名重命名代理。
+resource 		从文件中读取并执行empire命令的列表。
+revtoself 		使用凭据令牌来恢复令牌特权。
+sc 				采用屏幕截图, 默认值为 PNG。给出比率意味着使用 JPEG。例如, sc [1-100]
+scriptcmd 		在当前导入的 PowerShell 脚本中执行一个函数。
+scriptimport	脚本端口导入 PowerShell 脚本并将其保存在代理的内存中。
+searchmodule 	搜索模块搜索empire模块名称描述。
+shell 			要使用 shell 命令的代理。
+shinject 		将注入非 meterpreter 侦听器shellcode插入远程进程。例如: shinject <listener> <pid>
+sleep 			休眠任务代理到 "睡眠间隔 [抖动]"
+spawn 			生成一个新的empire代理为给定的听众名称。例如: 生成<listener>
+steal_token 	使用凭据令牌模拟给定进程 ID 的令牌。
+sysinfo 		任务代理以获取系统信息。
+updatecomms 	动态更新代理通信到另一个侦听器
+updateprofile 	更新代理连接配置文件。
+upload			上载文件。
+usemodule 		使用empire powershell模块。
+workinghours 	获取或设置代理的工作时间 (9:00-17:00).
