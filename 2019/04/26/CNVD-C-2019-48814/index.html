@@ -126,8 +126,8 @@ python CNVD-C-2019-48814.py -l 172.26.1.102 -p 9999 -r http://172.26.1.110:7001 
 <h3 id="八、漏洞处置"><a href="#八、漏洞处置" class="headerlink" title="八、漏洞处置"></a>八、漏洞处置</h3><blockquote>
 <p>Oracle官方暂未发布补丁，临时解决方案如下：</p>
 <ol>
-<li>删除该war包并重启webLogic;</li>
-<li>通过访问策略控制禁止<code>/_async/*</code>路径的URL访问。</li>
+<li>删除该war包并重启webLogic;<br>注意：wls9_async_response.war属于一级应用包，对其进行移除或更名操作可能造成未知的后果，Oracle官方不建议对其进行此类操作。</li>
+<li>通过访问策略控制禁止<code>/_async/*</code>路径的URL访问。建议使用WebLogic Server构建网站的信息系统运营者进行自查，发现存在漏洞后，按照临时解决方案及时进行修复。</li>
 </ol>
 </blockquote>
 <h3 id="九、Refer"><a href="#九、Refer" class="headerlink" title="九、Refer"></a>九、Refer</h3><blockquote>
