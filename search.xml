@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>No module named ordered_dict</title>
+      <link href="/2019/04/26/No-module-named-ordered-dict/"/>
+      <url>/2019/04/26/No-module-named-ordered-dict/</url>
+      
+        <content type="html"><![CDATA[<hr><p>一、Problem</p><blockquote><p><code>ImportError: No module named ordered_dict</code></p></blockquote><p>二、Solution</p><pre><code>pip uninstall urllib3pip install urllib3==1.22</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CNVD-C-2019-48814 -- Weblogic</title>
       <link href="/2019/04/26/CNVD-C-2019-48814/"/>
       <url>/2019/04/26/CNVD-C-2019-48814/</url>

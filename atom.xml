@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-26T07:38:02.467Z</updated>
+  <updated>2019-04-26T08:04:26.972Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>No module named ordered_dict</title>
+    <link href="http://yoursite.com/2019/04/26/No-module-named-ordered-dict/"/>
+    <id>http://yoursite.com/2019/04/26/No-module-named-ordered-dict/</id>
+    <published>2019-04-26T07:58:39.000Z</published>
+    <updated>2019-04-26T08:04:26.972Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>一、Problem</p><blockquote><p><code>ImportError: No module named ordered_dict</code></p></blockquote><p>二、Solution</p><pre><code>pip uninstall urllib3pip install urllib3==1.22</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;一、Problem&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ImportError: No module named ordered_dict&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;二、Solution&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CNVD-C-2019-48814 -- Weblogic</title>
