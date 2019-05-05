@@ -22,12 +22,11 @@ vim robbyrussell-ascii.zsh-theme
 <li>2</li>
 </ul>
 <pre><code class="shell">local ret_status=&quot;%(?:%{$fg[green]%}&gt;:%{$fg[red]%}&gt;%s)&quot;
-PROMPT=&#39;${ret_status} %{$fg[cyan]%}%~ %{$reset_color%} $(git_prompt_info) # &#39;
+PROMPT=&#39;${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)%{$fg[green]%}-&gt; &#39;
 
 ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[blue]%}git:(%{$fg[red]%}&quot;
 ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;
 ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%}) %{$fg[yellow]%}x%{$reset_color%}&quot;
-ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;
 </code></pre>
 <ul>
 <li>3</li>
