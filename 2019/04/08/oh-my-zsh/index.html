@@ -29,17 +29,27 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;
 ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%}) %{$fg[yellow]%}x%{$reset_color%}&quot;
 </code></pre>
 <ul>
-<li>3.<br><code>`</code><br>local ret_status=”%(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜ )”<br>PROMPT=’${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)%{$fg_bold[green]%}➜  ‘</li>
+<li>3.</li>
 </ul>
-<p>ZSH_THEME_GIT_PROMPT_PREFIX=”%{$fg[blue]%}git:(%{$fg[red]%}”<br>ZSH_THEME_GIT_PROMPT_SUFFIX=”%{$reset_color%} “<br>ZSH_THEME_GIT_PROMPT_DIRTY=”%{$fg[blue]%})%{$fg[yellow]%}”<br>ZSH_THEME_GIT_PROMPT_CLEAN=”%{$fg[blue]%})”</p>
-<pre><code>
-- 4. 
+<pre><code class="shell">local ret_status=&quot;%(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜ )&quot;
+PROMPT=&#39;${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)%{$fg_bold[green]%}➜  &#39;
 
-```shell
-vim .zshrc
+ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[blue]%}git:(%{$fg[red]%}&quot;
+ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;
+ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%})%{$fg[yellow]%}&quot;
+ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;
+</code></pre>
+<ul>
+<li><ol start="4">
+<li></li>
+</ol>
+</li>
+</ul>
+<pre><code class="shell">vim .zshrc
 ZSH_THEME=&quot;zsh_shell-ascii&quot;
 source .zshrc
-</code></pre><hr>
+</code></pre>
+<hr>
 <blockquote>
 <p><strong>3. 效果如图</strong></p>
 </blockquote>
